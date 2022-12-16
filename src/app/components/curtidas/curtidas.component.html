@@ -1,0 +1,23 @@
+<div class="Home container gradient py-5">
+    <section class="row row-cols-1 row-cols-lg-3 row-cols-md-2 my-5 gy-5">
+        <div class="col-12 col-lg-4 d-flex justify-content-center" *ngFor="let track of User?.Curte">
+            <div class="card" (click)="Play(track.id)" (mouseleave)="visivel[track.id] = false" (mouseenter)="visivel[track.id] = true">
+                <img [src]="track.imgTab" alt="migTab" class="card-img-top h-50">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <img class="icon rounded-circle" [src]="track.banda" alt="iconBanda">
+                        <h5 class="card-title ms-2"> {{track.title}} </h5>
+                    </div>
+                    <!--controls-->
+                    <button type="button" class="Play" *ngIf="visivel[track.id]">
+                        <img src="../../../assets/Images/play.png" alt="play">
+                    </button>
+                    <button type="button" class="curte" (click)="Curte(track.id,track)" *ngIf="ValidadeCurte(track)">
+                        <img src="../../../assets/Images/noCurte.png" alt="desFolow" [id]="track.id">
+                    </button>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,65 @@
+<div class="contanier black text-white m-0" *ngIf="this.User">
+    <img src="../../../assets/Images/playlist.jpg" alt="playlisImg">
+    <h1 class="titulo"> Play List</h1>
+    <section class="row justify-content-lg-around row-cols-1 row-cols-md-2 row-cols-lg-3">
+        <div class="col-12 col-lg-4 d-flex justify-content-center my-5" *ngFor="let item of this.User.playlists">
+            <div class="card bg-dark border-0" (click)="visivel[item.id] = false" (mouseleave)="visivel[item.id] = false" (mouseenter)="visivel[item.id] = true">
+                <img [src]="item.PlayListImg" alt="ImgPlayList" class="card-img-top">
+                <button type="button" class="Play" *ngIf="visivel[item.id]" (click)="playMusics(item)">
+                    <img src="../../../assets/Images/play.png" alt="play">
+                </button>
+                <div class="card-body">
+                    <h2> {{item.playlistName}} </h2>
+                    <span class="text-muted"> de: {{this.User.nameUser}} </span>
+                </div>
+                <div class="card-footer" style="height: auto;">
+                    <div ngbDropdown class="d-flex justify-content-between">
+                        <button type="button" class="btn-opcao d-flex justify-content-around align-items-center" ngbDropdownToggle>
+                            <div class="menu-point"></div>
+                            <div class="menu-point"></div>
+                            <div class="menu-point"></div>
+                        </button>
+                        <div ngbDropdownMenu class="bg-dark">
+                            <button type="button" class="bg-dark text-white" ngbDropdownItem (click)="remove(item.id)"> Apagar </button>
+                            <button type="button" class="bg-dark text-white" ngbDropdownItem (click)="open(item.id)"> editar  </button>
+                        </div>
+                        <button type="button" class="btn-opcao text-white" routerLink="/addMusic" [queryParams]="{id:User?.id,playlistId:item.id}">
+                            <span class="text-center"> + </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Modal" *ngIf="modal">
+            <div class="Modal-header">
+                <button type="button" class="btn-close" (click)="modal = false"></button>
+            </div>
+            <div class="Modal-body">
+                <form [formGroup]="Form" class="d-flex flex-wrap justify-content-center">
+                    <fieldset class="form-group">
+                        <label class="picture">
+                            <input type="file" class="picture-input" id="FileImgPlayList">
+                            <img src="../../../assets/Images/5eec91792500006a2eeb3a4f.webp" class="picture" id="imagePlayList" alt="PlayListImg">
+                        </label>
+                    </fieldset>
+                    <fieldset class="form-group mx-5 text-center">
+                        <label for="nomeUser">Username:</label>
+                        <input type="text" class="form-Input text-dark" formControlName="namePlayList">
+                        <button type="button" class="d-block btn btn-secondary my-3 w-100" (click)="save(id)"> Salvar </button>
+                    </fieldset>
+                </form>
+                <section class="listMusic my-3">
+                    <div class="row gy-3">
+                        <div class="col-12 d-flex w-100" *ngFor="let item of playlist?.musics">
+                            <img [src]="item.imgTab" class="rounded-circle mx-2" style="width: 64px;" alt="iconband">
+                            <p class="my-auto"> {{item.title}} </p>
+                            <button type="button" class="ms-auto lixo" (click)="removeMusic(item)">
+                                <img src="../../../assets/Images/lixo.png" alt="lixo">
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

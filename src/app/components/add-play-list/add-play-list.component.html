@@ -1,0 +1,18 @@
+<div class="container p-0 gradient">
+    <section class="CreatePlayList row row-cols-1 row-cols-lg-2">
+        <label class="col picture my-5 mx-auto p-0">
+            <input type="file" class="picture-input" id="fileimg">
+            <img src="../../../assets/Images/music.png" id="musicImage" alt="music" class="picture">
+        </label>
+        <div class="col text-center my-5">
+            <h2 class="text-white my-3">PlayList</h2>
+            <form [formGroup]="Form" class="my-4">
+                <label class="text-white my-2"> PlayList Name:</label>
+                <fieldset class="form-Search text-white buscar mx-2">
+                    <input type="text" class="form-Input" formControlName="namePlayList">
+                </fieldset>
+            </form>
+            <button type="button" class="btn btn-primary w-50" (click)="salvarPLayList()"> criar </button>
+        </div>
+    </section>
+</div>

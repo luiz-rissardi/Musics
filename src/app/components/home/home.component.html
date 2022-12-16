@@ -1,0 +1,36 @@
+<div class="Home container gradient py-5" *ngIf="this.Tracks">
+        <form class="d-flex justify-content-start">
+            <fieldset class="form-Search text-dark d-flex buscar mx-2">
+                <span> <img class="mt-3" src="../../../assets/Images/lupa.png" alt="lupa" style="width:20px;"> </span>
+                <input type="text" class="form-Input" (input)="SearchInput($event)">
+            </fieldset>
+        </form>
+    <h2 class="display-1 my-5 mx-4 text-white" id="horario"></h2>
+    <section class="row justify-content-lg-around">
+        <div class="col-4 col-lg-3 cardPlaylists p-0" *ngFor="let item of this.TopPlaylist">
+            <img [src]="item.PlayListImg" alt="playlistimg" class="playlist">
+            <h2 class="mx-auto my-auto playlist-desc"> {{item.playlistName}} </h2>
+        </div>
+    </section>
+
+    <section class="row row-cols-1 row-cols-lg-3 row-cols-md-2 my-5 gy-5">
+        <div class="col-12 col-lg-4 d-flex justify-content-center" *ngFor="let track of Tracks">
+            <div class="card" (click)="Play(track.id)" (mouseleave)="visivel[track.id] = false" (mouseenter)="visivel[track.id] = true">
+                <img [src]="track.imgTab" alt="migTab" class="card-img-top h-50">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <img class="icon rounded-circle" [src]="track.banda" alt="iconBanda">
+                        <h5 class="card-title ms-2"> {{track.title}} </h5>
+                    </div>
+                    <!--controls-->
+                    <button type="button" class="Play" *ngIf="visivel[track.id]">
+                        <img src="../../../assets/Images/play.png" alt="play">
+                    </button>
+                    <button type="button" class="curte" (click)="Curte(track.id,track)" *ngIf="ValidadeCurte(track)">
+                        <img src="../../../assets/Images/noCurte.png" alt="desFolow" [id]="track.id">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,29 @@
+<div class="container-fluid d-flex">
+    <div class="LoginCard rounded m-auto my-5">
+        <form [formGroup]="Form" class="font-monospace">
+            <h1 class="display-3 text-center">Sign in</h1>
+            <fieldset>
+                <label class="picture d-flex mx-auto">
+                    <input type="file" class="picture-input" id="fileimg">
+                    <img src="../../../assets/Images/addUser.png" id="musicImage" alt="music" class="picture">
+                </label>
+            </fieldset>
+            <fieldset class="row mx-1 mx-5 my-5" id="nome">
+                <label class="form-label col-sm-12">User name:</label>
+                <input type="text" formControlName="username" class="form-control">
+                <span *ngIf="!validation" class="invalid">
+                   nome já cadastrado!
+                </span>
+            </fieldset>
+
+            <fieldset class="row mx-1 mx-5 my-5"  id="password">
+                <label class="form-label col-sm-12" for="password">Password:</label>
+                <input type="password" formControlName="password" class="form-control">
+            </fieldset>
+
+            <fieldset class="row d-flex justify-content-end">
+                <button type="submit" class="btnLogin mx-auto" (click)="Create()"> Sign </button>
+            </fieldset>
+        </form>
+    </div>
+</div>

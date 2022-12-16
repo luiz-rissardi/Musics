@@ -1,0 +1,32 @@
+@import "../../Mixins.scss";
+
+.User{
+    &Img{
+        width: 14.375em;
+        border-radius: 50%;
+        @include Breakpoint(Mobile-only){
+            width: 10.625em;
+        }
+    }
+}
+
+
+.black{
+    background-color: black;
+    height: 100vh;
+}
+
+.btnEditar{
+    width: 8.125em;
+    background-color: black;
+    color: white;
+    border-radius: 1em;
+    border: 1px solid white;
+}
+
+.Modal{
+    @include Breakpoint(Mobile-only){
+        left: 1%;
+        width: 77%;
+    }
+}

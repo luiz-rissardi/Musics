@@ -1,0 +1,24 @@
+@import "../../Mixins.scss";
+
+.LoginCard{
+    width: 500px;
+    height: 70vh;
+    background-color:rgb(202, 202, 202);
+}
+
+
+.btnLogin{
+    width: 80%;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(90deg,rgb(0, 255, 234) 0%, rgb(8, 8, 138) 50%, rgb(66, 21, 122) 100%);
+}
+
+.invalid{
+    color: red;
+    &-group{
+        padding: 1%;
+        border: 1px solid red;
+        color: red;
+    }
+}

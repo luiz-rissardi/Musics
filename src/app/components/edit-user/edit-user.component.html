@@ -1,0 +1,35 @@
+<div class="container p-0 py-5 text-bg-dark">
+    <section class="d-flex m-5">
+        <img src="../../../assets/Images/addUser.png" alt="userimg" id="UserImg" class="UserImg">
+        <div class="mx-5">
+            <h4 class="font-monospace">Perfil</h4>
+            <h1 class="display-1" *ngIf="User"> {{User.nameUser}} </h1>
+            <span class="text-muted"> n de playLists</span>
+        </div>
+    </section>
+    <section class="black p-5">
+        <button type="button" class="btnEditar" (click)="open()">
+            <p class="m-3 text-center">editar</p>
+        </button>
+        <div class="Modal" *ngIf="modal">
+                <div class="Modal-header d-flex justify-content-end">
+                    <button type="button" class="btn-close" (click)="this.modal = false"></button>
+                </div>
+                <div class="Modal-body">
+                    <form [formGroup]="Form" class="d-flex">
+                        <fieldset class="form-group">
+                            <label class="picture">
+                                <input type="file" class="picture-input" id="FileImg">
+                                <img src="../../../assets/Images/addUser.png" alt="UserImg" id="image2" class="picture">
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-group mx-5">
+                            <label for="nomeUser">Username:</label>
+                            <input type="text" class="form-Input text-dark" formControlName="nameUser">
+                            <button type="button" class="d-block btn btn-secondary my-3 w-75" (click)="salvar()"> Salvar </button>
+                        </fieldset>
+                    </form>
+                </div>
+        </div>
+    </section>
+</div>

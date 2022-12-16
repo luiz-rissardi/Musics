@@ -1,0 +1,15 @@
+<div class="conatainer me-3">
+    <div ngbDropdown>
+        <button type="button" class="userBtn" ngbDropdownToggle>
+            <div class="user">
+                <img src="../../../assets/Images/addUser.png" alt="imagemUser" id="image" class="userImg rounded-circle">
+                <p class="userName m-auto"> {{User.nameUser}} </p>
+            </div>
+        </button>
+        <div ngbDropdownMenu class="bg-dark">
+            <button type="button" class="bg-dark text-white" (click)="navegar()" ngbDropdownItem> Editar </button>
+            <button type="button" class="bg-dark text-white" (click)="close()" ngbDropdownItem> Sair </button>
+            <button type="button" class="bg-dark text-white" (click)="curtidas()" ngbDropdownItem> Curtidas </button>
+        </div>
+    </div>
+</div>

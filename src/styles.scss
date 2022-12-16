@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "./app/Mixins.scss";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    @include Breakpoint(Leptop-up){
+    width: 40px;
+    height: 40px;
+    }
+    @include Breakpoint(desktop-up){
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+.form {
+    &-Search {
+        position: relative;
+    }
+
+    &-Input {
+        border: none;
+        border-bottom: 1px solid lightgrey;
+        background-color: transparent;
+        outline: none;
+        min-width: 50%;
+        font-size: 16px;
+        color: white;
+        @include Breakpoint(Mobile-only)
+        {
+            min-width:50%;
+        }
+    }
+}
+
+.picture{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &-input{
+        display: none;
+    }
+    @include Breakpoint(Mobile-only){
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+.Modal{
+    width: 28em;
+    padding: 3%;
+    background-color: white;
+    position: fixed;
+    top: 5%;
+    left: 40%;
+    z-index: 40;
+    color: black;
+    border-radius: 5px;
+    &-header{
+        width: 100%;
+    }
+    &-body{
+        width: 100%;
+    }
+    @include Breakpoint(Mobile-only){
+        width: 98%;
+        left: 1%;
+        top:5%;
+    }
+    @include Breakpoint(Ipad-only){
+        left: 35%;
+    }
+}

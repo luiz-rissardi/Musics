@@ -1,0 +1,123 @@
+@import "../../Mixins.scss";
+
+img {
+    width: 100%;
+}
+
+.titulo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    font-size: 100px;
+    background-image: linear-gradient(to top, rebeccapurple, steelblue, turquoise);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include Breakpoint(Ipad-only) {
+        left: 30%;
+    }
+
+    @include Breakpoint(Mobile-only) {
+        display: none;
+    }
+}
+
+.form {
+    &-Search {
+        position: relative;
+        padding-top: 13px;
+    }
+
+    &-Input {
+        border: none;
+        border-bottom: 1px solid lightgrey;
+        background-color: transparent;
+        outline: none;
+        min-width: 80%;
+        font-size: 16px;
+        color: white;
+    }
+}
+
+.black {
+    background: linear-gradient(180deg, rgb(1, 1, 62) 0%, black 100%);
+    height: auto;
+}
+
+.icon {
+    width: 30px;
+}
+
+.card {
+    width: 18.75em !important;
+    height: 21.75em !important;
+
+    &-img-top {
+        width: 100%;
+        height: 12.5em !important;
+    }
+}
+
+.btn-opcao {
+    width: 2em;
+    height: 2em;
+    background-color: rgb(64, 64, 64);
+    border-radius: 50%;
+}
+
+.menu-point {
+    width: 0.2em;
+    height: 0.2em;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.Play {
+    position: absolute;
+    background-color: transparent;
+    left: 33%;
+    top: 30%;
+    border: none;
+    width: 100px;
+    height: 100px;
+}
+
+
+.listMusic {
+    width: 100%;
+    height: 47vh;
+    border: solid 1px black;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+section::-webkit-scrollbar {
+    display: none;
+}
+
+section::-webkit-scrollbar-track {
+    display: none;
+}
+
+section::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.lixo {
+    border: none;
+    background-color: transparent;
+}
+
+
+.Modal {
+    @include Breakpoint(Mobile-only) {
+        width: 79% !important;
+        left: 1% !important;
+        bottom: 5% !important;
+    }
+}

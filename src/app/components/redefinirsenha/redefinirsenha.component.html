@@ -1,0 +1,23 @@
+<div class="container-fluid d-flex">
+    <div class="LoginCard rounded m-auto my-5">
+        <form [formGroup]="Form" class="font-monospace">
+            <h1 class="display-5 text-center my-5">Redefinir senha</h1>
+            <fieldset class="row mx-1 mx-5 my-5" id="username">
+                <label class="form-label col-sm-12" for="username" >informe o nome de usuario:</label>
+                <input type="text"  class="form-control" formControlName="username">
+                <span *ngIf="!Validation" class="invalid">
+                    usuario não encontardo
+                </span>
+            </fieldset>
+
+            <fieldset class="row mx-1 mx-5 my-5"  id="password">
+                <label class="form-label col-sm-12" for="password" >Password:</label>
+                <input type="password" class="form-control" formControlName="password" >
+            </fieldset>
+
+            <fieldset class="row d-flex justify-content-end align-items-center">
+                <button type="submit" class="btnLogin mx-auto" (click)="Redefinir()"> redefinir</button>
+            </fieldset>
+        </form>
+    </div>
+</div>

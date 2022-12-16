@@ -1,0 +1,30 @@
+/*
+320px — 480px: dispositivos móveis.
+481px — 768px: iPads, tablets.
+769px — 1024px: telas pequenas, laptops.
+1025px — 1200px: desktops, telas grandes.
+1201px e acima — telas muito grandes, TVs.
+*/
+
+@mixin Breakpoint($point) {
+    @if $point == Mobile-only{
+        @media (max-width:28.125em) {
+            @content;
+        }
+    }
+    @if $point == Ipad-only{
+        @media (max-width:48em){
+            @content;
+        }
+    }
+    @if $point == Leptop-up{
+        @media (min-width:64em) {
+            @content;
+        }
+    }
+    @if $point == desktop-up{
+        @media (min-width:64.0625em) {
+            @content;
+        }
+    }
+}

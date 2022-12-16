@@ -1,0 +1,34 @@
+@import "../../Mixins.scss";
+
+
+.CreatePlayList{
+    height: auto;
+}
+
+.gradient{
+    background: linear-gradient(180deg,rgb(2, 50, 2) 0%,rgb(19, 18, 18) 100%);
+}
+
+.buscar{
+    width: 100%;
+}
+
+.form-Input{
+    width: 75% !important;
+}
+
+.contentMain{
+    margin: 0;
+    height: 400px;
+}
+
+.picture{
+    border-radius: 1em !important;
+    width: 21.25em;
+    height: 20.25em;
+    @include Breakpoint(Mobile-only){
+    width: 15.625em;
+    height: 15.625em ;
+    }
+}
+
